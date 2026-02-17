@@ -1,0 +1,52 @@
+# ── Environment ────────────────────────────────────────────────────────
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export PATH="$HOME/.local/bin:$PATH"
+export EDITOR="nano"
+export LANG="en_US.UTF-8"
+
+# 1Password SSH agent
+export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+# ── Tool initialization ───────────────────────────────────────────────
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+eval "$(fzf --zsh)"
+
+# ── Plugins ───────────────────────────────────────────────────────────
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# ── Aliases ───────────────────────────────────────────────────────────
+alias ls="eza --icons --group-directories-first"
+alias ll="eza -la --icons --group-directories-first --git"
+alias lt="eza --tree --icons --level=2"
+alias cat="bat"
+alias find="fd"
+alias grep="rg"
+alias top="btop"
+alias diff="delta"
+alias lg="lazygit"
+
+# ── History ───────────────────────────────────────────────────────────
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
+# ── Directory options ─────────────────────────────────────────────────
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_SILENT
+
+# ── Completion ────────────────────────────────────────────────────────
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu select

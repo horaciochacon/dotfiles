@@ -1,0 +1,57 @@
+[user]
+	name = horaciochacon
+	email = horaciochacon89@gmail.com
+	# signingkey = ssh-ed25519 AAAA...  # Uncomment and add your 1Password SSH public key
+
+[init]
+	defaultBranch = main
+
+[core]
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	side-by-side = true
+	line-numbers = true
+	syntax-theme = Catppuccin Mocha
+
+[merge]
+	conflictstyle = zdiff3
+
+[diff]
+	colorMoved = default
+
+[push]
+	autoSetupRemote = true
+	default = current
+
+[pull]
+	rebase = true
+
+[fetch]
+	prune = true
+
+[alias]
+	co = checkout
+	br = branch
+	st = status
+	lg = log --oneline --graph --decorate --all
+	cm = commit -m
+	aa = add --all
+	last = log -1 HEAD
+	undo = reset --soft HEAD~1
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgsign = true
