@@ -75,11 +75,39 @@ return {
           local lines = vim.api.nvim_buf_get_lines(0, best_range[1], best_range[4] + 1, false)
           iron.send(nil, lines)
           move_to_next_code_line(best_range[4] + 2)
-        else
-          iron.send_line()
-          local cursor = vim.api.nvim_win_get_cursor(0)
-          move_to_next_code_line(cursor[1] + 1)
+          return
         end
+
+        -- Fallback: walk up treesitter AST to find the enclosing statement node.
+        -- This handles multi-line assignments, function calls, return statements, etc.
+        local statement_types = {
+          expression_statement = true,
+          assignment = true,
+          augmented_assignment = true,
+          return_statement = true,
+          with_statement = true,
+          try_statement = true,
+          assert_statement = true,
+          raise_statement = true,
+          delete_statement = true,
+        }
+
+        local node = vim.treesitter.get_node()
+        while node do
+          if statement_types[node:type()] then
+            local sr, _, er, _ = node:range()
+            local lines = vim.api.nvim_buf_get_lines(0, sr, er + 1, false)
+            iron.send(nil, lines)
+            move_to_next_code_line(er + 2)
+            return
+          end
+          node = node:parent()
+        end
+
+        -- Final fallback: send current line
+        iron.send_line()
+        local cursor = vim.api.nvim_win_get_cursor(0)
+        move_to_next_code_line(cursor[1] + 1)
       end, { silent = true, desc = "Smart send to REPL" })
     end,
   },
