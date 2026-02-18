@@ -1,7 +1,7 @@
 [user]
 	name = horaciochacon
 	email = horaciochacon89@gmail.com
-	# signingkey = ssh-ed25519 AAAA...  # Uncomment and add your 1Password SSH public key
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJObOGTjC+r6sP+OtSMQd2ozWmTtHq1DGQgJjxa6BjZs
 
 [init]
 	defaultBranch = main

@@ -1,15 +1,16 @@
 # Font
 font-family = JetBrainsMono Nerd Font
-font-size = 14
+font-size = 18 
 
 # Theme
-theme = catppuccin-mocha
+theme = Argonaut 
 
 # Window
 window-padding-x = 8
 window-padding-y = 4
 window-decoration = true
 macos-titlebar-style = tabs
+background-opacity = 0.9
 
 # Cursor
 cursor-style = block
@@ -17,6 +18,7 @@ cursor-style-blink = false
 
 # Shell integration
 shell-integration = zsh
+shell-integration-features = no-cursor,no-sudo,title,ssh-env,ssh-terminfo
 
 # Misc
 copy-on-select = clipboard
