@@ -29,6 +29,7 @@ alias grep="rg"
 alias top="btop"
 alias diff="delta"
 alias lg="lazygit"
+alias claude="claude --dangerously-skip-permissions"
 
 # ── History ───────────────────────────────────────────────────────────
 HISTFILE="$HOME/.zsh_history"
