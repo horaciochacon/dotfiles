@@ -5,6 +5,7 @@ return {
       { "<S-CR>", desc = "Smart send to REPL" },
       { "<S-CR>", mode = "v", desc = "Send selection to REPL" },
       { "<leader>sc", desc = "Send motion to REPL" },
+      { "<A-S-CR>", desc = "Send cell block to REPL" },
       { "<leader>rs", desc = "Open/toggle REPL" },
       { "<leader>rr", desc = "Restart REPL" },
     },
@@ -20,6 +21,7 @@ return {
             python = {
               command = { "ipython", "--no-autoindent" },
               format = common.bracketed_paste,
+              block_dividers = { "# %%", "#%%" },
             },
             r = {
               command = { "R" },
@@ -30,6 +32,7 @@ return {
         keymaps = {
           visual_send = "<S-CR>",
           send_motion = "<leader>sc",
+          send_code_block_and_move = "<A-S-CR>",
           toggle_repl = "<leader>rs",
           restart_repl = "<leader>rr",
         },
