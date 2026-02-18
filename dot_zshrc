@@ -31,6 +31,16 @@ alias diff="delta"
 alias lg="lazygit"
 alias claude="claude --dangerously-skip-permissions"
 
+# ── Yazi wrapper (cd on quit) ─────────────────────────────────────────
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
 # ── History ───────────────────────────────────────────────────────────
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000

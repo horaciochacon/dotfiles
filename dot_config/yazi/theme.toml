@@ -1,0 +1,13 @@
+[flavor]
+dark = "catppuccin-macchiato"
+
+# Override the hovered/cursor line — the default "reversed" creates
+# a harsh solid-blue bar with transparency.  Use a subtle Surface1 bg instead.
+[mgr]
+hovered       = { bg = "#494d64", bold = true }
+preview_hovered = { bg = "#494d64" }
+
+# Transparent which-key mask to match Ghostty opacity
+[which]
+mask = { bg = "reset" }
+separator_style = { fg = "#6e738d" }
