@@ -8,3 +8,6 @@ vim.g.lazyvim_python_lsp = "basedpyright"
 -- Allow full transparency for floats (sidebars, terminal, popups)
 vim.o.winblend = 0
 vim.o.pumblend = 0
+
+-- Disable spell checking by default (toggle with :set spell)
+vim.o.spell = false
