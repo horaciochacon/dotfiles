@@ -20,6 +20,12 @@ cursor-style-blink = false
 shell-integration = zsh
 shell-integration-features = no-cursor,no-sudo,title,ssh-env,ssh-terminfo
 
+# Split pane navigation (vim-style)
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:bottom
+keybind = ctrl+shift+k=goto_split:top
+keybind = ctrl+shift+l=goto_split:right
+
 # Misc
 copy-on-select = clipboard
 confirm-close-surface = false
