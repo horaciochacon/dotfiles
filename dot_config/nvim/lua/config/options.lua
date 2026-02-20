@@ -4,3 +4,7 @@
 
 -- Use basedpyright instead of pyright for Python LSP
 vim.g.lazyvim_python_lsp = "basedpyright"
+
+-- Allow full transparency for floats (sidebars, terminal, popups)
+vim.o.winblend = 0
+vim.o.pumblend = 0
