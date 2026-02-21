@@ -7,8 +7,8 @@ show_hidden = true
 
 [preview]
 image_filter = "lanczos3"
-max_width = 800
-max_height = 1200
+max_width = 3840
+max_height = 2160
 
 [opener]
 edit = [

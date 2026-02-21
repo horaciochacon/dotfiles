@@ -26,6 +26,10 @@ keybind = ctrl+shift+j=goto_split:bottom
 keybind = ctrl+shift+k=goto_split:top
 keybind = ctrl+shift+l=goto_split:right
 
+# Tab navigation (Y/O flank the H/L split keys)
+keybind = ctrl+shift+y=previous_tab
+keybind = ctrl+shift+o=next_tab
+
 # Misc
 copy-on-select = clipboard
 confirm-close-surface = false
