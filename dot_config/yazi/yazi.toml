@@ -26,6 +26,11 @@ id  = "git"
 url = "*/"
 run = "git"
 
+# --- Image zoom previewer (upscales small images to fill pane) ---
+[[plugin.prepend_previewers]]
+mime = "image/*"
+run  = "zoom 5"
+
 # --- Piper previewers ---
 [[plugin.prepend_previewers]]
 url = "*.md"
