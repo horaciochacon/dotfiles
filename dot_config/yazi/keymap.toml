@@ -89,6 +89,12 @@ on   = "P"
 run  = "plugin smart-paste"
 desc = "Paste into hovered dir"
 
+# Browse images with fzf+timg (fast over SSH)
+[[mgr.prepend_keymap]]
+on   = "I"
+run  = '''shell 'find . -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.svg" -o -iname "*.bmp" \) | sort | fzf --preview="timg -pk --compress -g80x40 {}"' --block'''
+desc = "Browse images (fzf+timg)"
+
 # Shell
 [[mgr.prepend_keymap]]
 on   = "!"

@@ -6,9 +6,11 @@ linemode = "size"
 show_hidden = true
 
 [preview]
-image_filter = "lanczos3"
-max_width = 3840
-max_height = 2160
+image_filter = "triangle"
+image_quality = 50
+image_delay = 100
+max_width = 1200
+max_height = 900
 
 [opener]
 edit = [
