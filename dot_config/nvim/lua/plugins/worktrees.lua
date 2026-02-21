@@ -16,6 +16,7 @@ local function switch_worktree()
 
   Snacks.picker({
     title = "Git Worktrees",
+    preview = false,
     items = vim.tbl_map(function(path)
       local branch = vim.fn.system("git -C " .. vim.fn.shellescape(path) .. " branch --show-current 2>/dev/null"):gsub("\n", "")
       local label = (path == current and "* " or "  ") .. branch .. "  " .. path
